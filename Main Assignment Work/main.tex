@@ -1,0 +1,595 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+
+\usepackage[english]{babel}
+\usepackage{apacite}
+
+\geometry{ margin=30mm }
+\counterwithin{subsection}{section}
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftsecindent}{2.2em}
+\setlength{\cftsubsecindent}{4.2em}
+\setlength{\cftsecnumwidth}{2em}
+\setlength{\cftsubsecnumwidth}{2.5em}
+
+\usepackage{graphicx}
+\graphicspath{ {Images/} } % direct to images folder --> pathways
+
+
+\begin{document}
+\titleformat{\section}
+{\normalfont\fontsize{15}{0}\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0cm}{0.5cm}{0.15cm}
+\titleformat{\subsection}
+{\normalfont\fontsize{13}{0}\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing{\section}{0cm}{0.5cm}{0.15cm}
+
+%=======================================================================================
+
+\begin{titlepage}
+\center 
+\textbf{\huge INFO1111: Computing 1A Professionalism}\\[0.75cm]
+\textbf{\huge 2022 Semester 1}\\[2cm]
+\textbf{\huge Practice: Team Project Report}\\[3cm]
+
+\textbf{\huge Submission number: 01}\\[0.75cm]
+\textbf{\huge Team Members:}\\[0.75cm]
+\textbf{\large
+    \begin{tabular}{|p{0.5\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|}
+        \hline
+        Name & Student ID & Levels being attempted in this submission\\
+        \hline
+        Cindy Nguyen & 520441800 & 1,2 \\
+        Charlotte Lynn & 520443653 & 1 \\
+        Lachlan Westfall & 510657884 & 1,2 \\
+        Reanne Huang & 520479951 & 1 \\
+        Tomas Dowd & ??? & ??? \\
+        \hline
+    \end{tabular}
+}\\[0.75cm]
+\end{titlepage}
+
+%=======================================================================================
+
+\tableofcontents
+
+%=======================================================================================
+
+\newpage
+\section*{General Instructions}
+
+You should use this \LaTeX\ template to generate your team project report. Keep in mind the following key points:
+\begin{itemize}
+    \item When we assess your report, you are not given a mark. Instead we will indicate (separately, for each team member) whether each level is ''achieved''.
+    \item In order to pass the unit, you must achieve at least level 1. 
+    \item In order to achieve level 2, you must first have achieved level 1, and so on for each level up to level 4. This means that we will not assess a higher level until a lower level has been achieved (though we will review one level higher and give you feedback to help you in refining your work).
+    \item Some parts of the report are completed as a team and other parts require each student to complete a different section. This means that for each submission, some members of the team may have completed their work for a given section, but other members may not. It also is therefore possible that some members of the team may achieve a specified level and other members of the team may not yet have achieved that level.
+    \item Even if some members are completing their material for a given level, and others are not, your team members will still need to work together to edit and compile the report.  The only exception to this is where a member of the team has already achieved the level they are targeting in a previous submission and has decided to not attempt higher levels, and so is not contributing any further (this should be obvious because no level is indicated for that student on the cover page).
+    \item When completing each section you should remove the explanation text and replace it with your material.
+\end{itemize}
+
+For each submission you will add new details to this report, and/or update previous sections (where previous work was not good enough to have achieved the relevant level). In particular:
+
+\begin{itemize}
+    \item \textbf{General:} For each submission, each student can attempt up to 2 levels. You must also successfully achieve each lower level before you can be assessed at a higher level. For example, in the first submission you might attempt only level 1, but not be successful in achieving that level. You then reattempt level 1 and add in level 2 in the second submission and are successful in achieving level 1 but not level 2. For the third and final submission you could then attempt level 2, or levels 2 and 3 - or even just choose to not submit anything further and remain at level 1).
+    \item \textbf{Submission 1:} You should complete at least the material for level 1 (since achieving level 1 is required to pass the unit). Each member of the team can also optionally choose to complete the material for level 2.\\
+    \textit{Note 1: If you do not complete the level 2 information then you obviously cannot achieve level 2 at this stage. This does not stop you from attempting level 2 in Deliverable 2 or 3, but it will make it more difficult to achieve the higher levels later in the semester.}
+    \textit{Note 2: To be able to achieve Level 1 in submission one your team has to achieve level 1 in the group component (Section 1.1) and you have to achieve Level 1 in the individual component (i.e. your assigned section 1.2, 1.3, 1.4 or 1.5)}
+    \item \textbf{Submission 2:} Each member of your team will complete additional sections, but because you are submitting a single document, you need to work together to compile your results together and generate the final submission.\\
+    If you did not achieve level 1 in your first submission, then you should revise the material for level 1 based on the feedback, and optionally you can also complete level 2.\\
+    If you achieved level 1 in your first submission, then each team member can optionally complete the material for levels 2 and 3.
+    \textit{Note: If you do not achieve level 1 with this submission then the highest level you will be able to achieve in the final submission will be level 2. If you achieve level 1, but not level 2, with this submission then the highest level you will be able to achieve with the final submission is level 3.}
+    \item \textbf{Submission 3:} Again, you can correct sections where you did not achieve the specified level in the previous submission, and you complete additional sections.\\
+    If you still have not achieved level 1, then you should revise the material for level 1 based on the feedback, and again optionally you can also complete level 2.\\
+    For those at level 1, you can choose to complete the material for levels 2 and 3.\\
+    For those at level 2, you can choose to complete the material for levels 3 and 4.\\
+    For those at level 3, you can choose to complete the material for level 4.
+\end{itemize}
+
+Whilst the team project is just that -- a team project -- it has been designed to also allow different members of the team to achieve different outcomes. We do expect you to work together as a team. If you do come across problems working together then the first step should be to discuss this with your tutor. Note: If you are having problems you should approach your tutor as soon as you can to make them aware of the difficulties you are having with your team.
+
+Finally, you should also ensure that any resources you use are suitably referenced, and references are included into the reference list at the end of this document. You should use APA 6th reference style \cite{apa6}.
+
+%=======================================================================================
+
+\newpage
+\section{Level 1: Basic Skills}
+
+Level 1 focuses on basic technical skills (related to \LaTeX\ and Git) and the types of skills used in different computing jobs.
+
+\subsection{Developing industry skills}
+
+This section is completed as a team.\\
+Throughout your Computing degree we will help you learn a range of new skills. Once you graduate however you will need to continue to learn new languages, new tools, new applications, etc. For this section you need to identify 5 approaches you can take to this continual learning. You should then put these in order from most effective to least effective, and then explain the circumstances in which each approach might be appropriate. (Target = $\sim$100 words per skill = $\sim$500 words total).
+\\\\
+\noindent \underline{Establishing self-learning goals}
+\begin{itemize}
+    \item Gives direction and helps to avoid the stagnation frequently brought on by aimless searching.
+    \item Helps create a sustained and organised approach to learning
+    \item Identify the skills and knowledge you aim to achieve throughout this process 
+    \item You develop an expectation for what your end project/goal should look like
+    \item Eg. Learning a new programming language, wanting to for example create a program with all the built-in functions learnt (ie. using if/elif/else to create a guessing game)
+\end{itemize}
+\\\\
+\noindent \underline{Learning through research / projects}
+\begin{itemize}
+    \item It allows you to build a foundation in the domain of your self-learning achievements. 
+    \item Information on the internet is vast 
+    \item Research projects are often the only path towards certain pieces of knowledge. Without the context of a very specific problem, you often would never think to ask the same questions.
+    \item Eg. It is applicable in most circumstances because new skills require understanding of the fundamental knowledge in order to move on from there. 
+\end{itemize}
+\\\\
+\noindent \underline{Learning through others / Networking}
+\begin{itemize}
+    \item Acts as a filler for what could not be obtained through basic research
+    \item Sharing ideas, concepts and perspectives with others. Can also involve teaching others to not only share information but to reinforce and consolidate your own understanding of the topic.
+    \item This is one of few ways of course-correcting your learning and ensuring that you are not building misconceptions around the topic. 
+    \item  Eg. Study groups, lectures and seminars are ways to test your knowledge and build on what you have already learnt
+\end{itemize}
+\\\\
+\noindent \underline{Testing / Trial and Error / Practising}
+\begin{itemize}
+    \item This is an important aspect of self-learning as it encourages you to test and consolidate your level of understanding and to further it into practical situations. 
+    \item applying this practice is crucial in the problem solving aspect. It challenges new perspectives and develops practical skills. 
+    \item Eg. Ensuring the written program performs as intended by testing different scenarios (ie. does the program work for different inputs)
+\end{itemize}
+\\\\
+\noindent \underline{Evaluate learning → self evaluation and self reflection}
+\begin{itemize}
+    \item A useful aspect of self-learning which helps to determine the progress made. It links to ‘establishing self-learning goals’ as the self-reflection/evaluation assesses whether you have achieved your goals.
+    \item If done in the middle of the self learning process, this is another method of course-correcting. If you can identify any issues relating to efficiency or goals, you can fix them for the rest of the process.
+    \item This can also help you figure out which types of projects you enjoy the most, and can help you develop goals for future self learning.
+    \item Eg. can occur during or the ending of the self-learning process.
+\end{itemize}
+
+This section is completed individually. Each member of the team should independently complete a separate copy of this section.\\
+You should begin by allocating to each team member a different major to focus on (i.e. one of: Computer Science; Data Science; Software Development; Cyber Security). \textit{If you have a fifth member, then your tutor will suggest a fifth topic to cover}. You should then undertake research into the typical practical skills that you believe would be most important to someone who graduates with this major and is then working in industry. You should list the 8 skills that you believe are most important and for each one give a short explanation as to why you feel it is important. (Target = $\sim$100 words per skill $\sim$800 words total per student).
+
+\subsection{Skills: Tomas Dowd : Computer Science}
+
+Computer science consists around the development computers and computer systems, having benefiting many areas of interest such as physics, navigation, artificial intelligence, hardware development, computer graphics, and cryptography. Computer science itself branched out from the fields of mathematics and engineering, inheriting many of their qualities such as formal proof, applied physics, peer review and research, and an emphasis on experimentation.
+
+8 key skills in this field:
+
+
+
+\noindent \underline{Mathematics}
+
+\noindent Mathematical skills are crucial and an integral part of the profession, they both give a profound knowledge base from which to derive solutions to problems and provide training for the necessary analytical and logical skills in computer science.
+For instance, mathematical concepts such as vectors, matrices and linear algebra are used throughout computer graphics, artificial intelligence development and physics engines. Using the mathematical primitives to the fullest extent, and the ability to apply them on different problems becomes essential.
+Similarly, mathematical intuitions derived from problem solving and logical reasoning are perfectly compatible with computer science with the most significant developments in the field, such as the development of the blockchain, which required the mathematical foundations in addition to cryptography. \\
+
+
+
+\noindent \underline{Correct use of data structures and algorithms}
+
+\noindent A computer scientist should be able to correctly recognize and implement appropriate data structures and algorithms to whatever problems they are encountering.
+This skill is fundamental, since computer scientists need to be able to tackle a variety of differing problems and derive useful solutions from them. \\
+
+A computer scientist should know the benefits and downsides of the data structures and algorithms in his tool belt, as failure to do so might again lead to an inferior solution or a wasted time implementing an inefficient algorithm.
+Additionally, knowing these structures up-front prevents them from reinventing the wheel, which while occasionally useful and desirable usually leads to wasted time implementing an inferior solution.
+Finally, knowing a large number of different data structures and algorithms gives the computer scientist a knowledge-base to derive new designs and strategies from in a similar way to primitives in mathematics. \\
+
+
+
+\noindent \underline{Shell scripting}
+
+\noindent Shell scripting and using basic Unix programs is a highly valuable skill for a computer programmer, it addresses needless code duplication and provides an alternative framework for dealing with a computer; speeding up the process of programming and development drastically. 
+For a computer scientist this is even more important, as dealing with large directory structures, sifting through datasets and managing servers or supercomputers are all skills that massively benefit from skill in the command line. \\
+
+Command line utilities, inheriting the Unix philosophy, strive to maximize the principles of minimalism and orthogonality meaning that every tool serves one particular purpose only without getting in the way of other tools. What this means is that the adept user is no longer thinking in terms of programming language constructs (variables holding particular amounts of memory, functions, data structures), he thinks instead in terms of how to merge simplistic programs together to achieve a purpose.
+This speeds up computer use dramatically and, with enough practise, can make the computer scientist easily save swaths of time. \\
+
+
+
+\noindent \underline{Touch typing}
+
+\noindent Touch typing, while often neglected, can incur massive time savings and is an essential skill for a computer scientist.
+Touch typing is the ability to type quickly without looking at the keyboard, a second nature to most secretaries and lawyers, but not necessarily ubiquitous among computer scientists.
+Learning touch typing is relatively easy, all that's needed is a site (such as monkeytype.com) which forces users to type as quickly as possible and a visual guide showing how to place the fingers and what keys they should each be pressing.
+Over a period of a few weeks of a occasional practise the muscle memory is set in and typing blind becomes possible as well as faster than before.
+Touch typing, once learnt, provides faster typing which reduces the delay and frustration between thinking about something and realising it on the machine which only gets better with practise. \\
+
+
+\noindent \underline{Optimization}
+
+\noindent Optimization whether in live code or in algorithm design is always an important consideration, as small optimizations play a big role in making an algorithm or program actually usable both by allowing the algorithm to run on more hardware and in less time.
+Improvements in performance are always appreciated and serve to promote and share good algorithms as the objective speed of a program (or other factors such as memory/disk usage) are easy to advertise and measure.
+For instance, optimizing an encryption algorithm suddenly makes secure encryption and privacy respecting software more feasible to more people and allows for the handling of more or simply larger files.
+Similarly, should a computer scientist develop an otherwise fast tool without proper care for optimization problems, it could really hurt the tool's widespread adoption. \\
+
+
+\noindent \underline{Competence in several programming languages}
+
+\noindent Knowing multiple programming languages is practically a requirement for computer scientists, since (much like mathematics) programming languages are a core component of the computer scientist's work.
+Being well versed in many languages gives the computer scientist multiple degrees of abstraction with which to tackle a complex problem.
+Whether it be a quick prototype in Python or slightly more elaborate Go demonstration, the computer scientist has more flexibility and freedom with which to carry her designs. \\
+
+\noindent \underline{Low level programming}
+
+\noindent In the same way that linguists resort to learning Latin to develop instincts and key insights in grammar and romantic languages, so too should computer scientists learn low level languages (especially C) to find good heuristics for programming and optimization.
+Being forced to develop programs without many modern crutches (automatic memory management, colossal libraries, and object orientation) makes the programmer understand and appreciate the costs of programming at higher levels, such that when tackling said levels the programmer has a complete understanding of what the underlying hardware is doing.
+This assists massively in optimization as memories of overflowing memory buffers will constantly come to haunt the programmer, on top of all sorts of other memory-related nightmares from their practise with lower level languages.
+Likewise, the computer scientist's programming skills will likely improve as programming in low level languages requires all sorts of minimalism and creativity that is usually lost on people who program in feature-full languages who depend on specific features.
+Finally, programming at a low level encourages computer scientists to re-implement many tools they might have been familiar with in higher level languages (Arraybuffers, dictionaries, hashmaps), which again makes them gain new depth in these tools. \\
+
+
+\noindent \underline{Computer design and architecture}
+
+\noindent Computer scientists ought to be familiar with the actual hardware and architecture they are developing for, understanding both the strengths and limits of the physical device in question.
+Knowledge of how the device works will add constraints to their thinking which improves creativity and is paramount to making their designs in reality.
+Similarly, knowing several architectures will empower the computer scientist to seek appropriate platforms for their solutions, such as GPUs for AI development or ARM chips for low power consumption.
+This is essential because, while a large degree of computer science involves theoretical and abstract work, for the solution to actually be useful it must be implementable in reality. \\
+
+
+\noindent \underline{Adaptability in learning}
+
+\noindent Finally, computer scientists must be adept learners who can deal with new ideas and concepts effectively avoiding prejudice.
+This is essential because computer science is a wide and deep field with many researchers exploring different areas all the time.
+A computer scientist should therefore be ready to critically look at many ideas and pitches to learn and to inspire future designs. \\
+
+\subsection{Skills: Charlotte Lynn : Data Science}
+
+Data science is an interdisciplinary field of study that deals with vast volumes of data, utilising modern tools to discover underlying patterns and to enable informed business decisions~\cite{oracle}. It requires skills varying from hard skills, for example machine learning and statistical analysis, to soft skills including communication and a strong business acumen. \\
+
+\noindent 8 key skills in this field: \\
+
+\noindent \underline{Machine learning}
+
+\noindent Machine learning is a subset of AI and enables computers to draw information from the given data~\cite{oracle}. Data science incorporates AI technologies to automate the process of data analysis through machine learning where machine learning algorithms are implemented to learn about data sets and to produce insights of the data in real time with less human intervention. A model developed in this field will assist in the process of discovering patterns and anomalies and can be further trained to make real-time predictions~\cite{techtarget}. \\
+
+\noindent \underline{Foundation in Mathematics and Statistics}
+
+\noindent Statistics and mathematics are at the core of data science~\cite{simple1}. Students and people in the industry of the data science field should have a strong foundation in this field as they form the basis of all machine learning algorithms. Analysing large quantities of data also puts an emphasis on the foundations of a data scientist’s skill of maths and statistics. In the scientific process, deep understanding of mathematics and statistics are useful when involved with the understanding of mathematical proofs and the abstract logic behind the results of data analysis~\cite{medium}.\\
+
+\noindent \underline{Statistical Modelling and Analysis}
+
+\noindent Statistical modelling of data enables efficient calculations, verification of and predictions and ideas based on the existing assumptions of the data~\cite{simple1}. Modelling is also an aspect of machine learning, which helps to identify the program that best suits the problem and how to further develop such models. 
+
+There is a large emphasis on modelling of data in the immediacy rather than deep scientific exploration. So efficiency in the modelling process helps achieve larger objectives more quickly. This is crucial through the scientific process in the following stages:
+\begin{itemize}
+    \item Understanding the limitations of a model 
+    \item Constructing hypotheses
+    \item Estimating data source quality
+    \item Quantifying the uncertainty around the data
+    \item Identifying the hidden trends 
+    \item Modelling a process (physical or informational) by probing the underlying dynamics~\cite{medium}
+\end{itemize} \\
+
+\noindent \underline{Programming}
+
+\noindent Statistical programming languages are vital to data scientists. They assist in the process of organising unstructured data sets allowing data scientists to understand and analyse data promptly and efficiently~\cite{simple2}~\cite{nerd}. These programming languages are critical for identifying trends and can also be used for projections. \\
+
+\noindent \underline{Data Wrangling and Preparing Data}
+
+\noindent Data wrangling is the process of transforming “raw” data into another format which is considered more suitable for use~\cite{inzata}. This is a critical skill of data scientists as it amounts to a large portion of time when gathering data and performing data analysis. It is the person’s role to not only compile the data but also determine the functionality and quality of the data when preparing for analysis~\cite{nerd}.\\
+
+\noindent \underline{Domain knowledge or Business Knowledge}
+
+\noindent Data science is considered a challenging and dynamic form of data work as it incorporates both the analytic tasks of data analysts, and the programming and machine learning aspect of data engineers~\cite{nerd}. Furthermore, because data scientists are found in most fields of business there is a great need for domain knowledge when processing data~\cite{techtarget}. Thus, when it comes to processing large data sets, it involves a culmination of skills of domain knowledge, data analysis and data engineering.\\
+
+While the hard skills listed above form the basis of the data science field, a successful student or person in the industry must have soft skills. Some important soft skills include:\\
+
+\noindent \underline{Problem solving ability and a Strong Business Acumen}
+
+\noindent Problem solving is a prominent aspect of data science as it is the drive to yield a useful result when addressing a data problem or question. As a practising data scientist, it is necessary that not only are you able to problem solve but also to discover and define the problem in the first place. To develop this ability, is to develop a good acumen. A culmination of experience, knowledge and skill, a strong business acumen is the most productive way of channelling one’s acquired technical skills into practical situations. Without such skill, statistical problems will be unrecognised and potential challenges that need to be solved in order for an organisation’s growth will be unexplored~\cite{simple2}. \\
+
+\noindent \underline{Strong Communication}
+
+\noindent Unsorted data on its own doesn't provide much useful insight. Data scientists are able to configure data to reveal particular ideas that can highlight trends or can project future values. While a huge aspect of data science is configuring data efficiently, it is also crucial that these ideas are able to be communicated clearly.  Data visualisation is an aspect of communication that is important as it explains the insights they have generated  through data storytelling ~\cite{techtarget}. Hence, communication is an essential skill, particularly when sharing these ideas with people who do not specialise in data science ~\cite{simple2}. This includes visual and verbal cues that assist in sharing such ideas. Therefore, the prevalence of effective communication with the assistance of data visualisation is necessary for students and workers alike. \\
+
+
+
+
+\subsection{Skills: Reanne Huang : Software Development}
+
+Software developers analyse a client’s needs, and design computer programs and software to satisfy those needs. As such, what a software developer creates is heavily dependent on what product the client wishes to see. They turn concepts into reality. ~\cite{U.S.}
+\\\\
+\noindent \underline{Teamwork and Communication} \\
+\noindent Software developers do not work alone, they must collaborate as a team thus there is a crucial need for teamwork and communication skills. This is further emphasised as software developers must be able to communicate clearly with clients and users to satisfy their demands and wishes. More specifically, good communication and teamwork involves both expressing and listening. Software developers must be able to listen to both ideas from colleagues and clients and subsequently voicing their own ideas. Following this, accounting for everyone’s opinions and working collaboratively to deduce the best next action will ensure a greater result overall. ~\cite{pointjupiter}
+\\\\
+\noindent \underline{Vast arsenal of Programming Skills} \\
+\noindentAs Software developers strive to create - a vast arsenal of programming skills equates to a variety of tools at the software developer’s disposal. By having broad knowledge and adeptness in several programming languages and software allows the developer more options when choosing the best tool to achieve their goal. This spectrum encompasses several skills, including proficiency in text editors, IDEs and object-oriented programming – just to name a few. This is important as software developers want to choose the most suitable and efficient tool in achieving what their client needs. ~\cite{javarevisited}
+\\\\
+\noindent \underline{Willingness to adapt and learn} \\
+\noindent The field of computer science and technology is ever growing. With new software tools and programs being improved on every passing day, the scope and potential of a software developer’s knowledge becomes limitless. In the pursuit of finding the best solution to the client’s request, software developers must sometimes accept that what they already know may not be sufficient/the best option. As such, the willingness to learn, to adapt and to step outside their comfort zone is imperative for a software developer. Learning a new hard skill for their current project will be an experience that will ultimately continue being useful to software developers in future projects. Gaining knowledge and proficiency in a new skill adds it to the arsenal of tools that software developers already have, which will only increase their options and capability in the future. 
+\\\\
+\noindent \underline{Problem solving} \\
+\noindent Looking at development from a wider perspective; it is heavily centred around problem solving. The scope of a client’s request could range anywhere from creating software to power heavy machinery, spacecraft, large scale operations to applications on the phone or organisational software. Whilst still all starkly different, what software developers must do is the same in all cases. They need to think critically in order to find the best solution and product to these complex problems. As such, software developing heavily involves challenging oneself and persevering to solve a broad variety of problems. ~\cite{pointjupiter}
+\\\\
+\noindent \underline{Creativity } \\
+\noindent Often times, good problem solving involves improvisation and innovation. A software developer needs to be creative, to look at the problems from different angles and propose a variety of solutions – whether they are successful or not. Thinking in unorthodox ways may be the key to finding the best solution to satisfy a client’s needs. This might include finding ways to push performances on weaker hardware or even new ways of utilising existing software and programs. At the base of it all, software developing is creating a product from something abstract like a request, which is why a creative mind is an integral part of software developing. ~\cite{pointjupiter} ~\cite{oktadev}
+\\\\
+\noindent \underline{Attention to detail} \\
+\noindent As software development is heavily product-oriented, it becomes very important to be sensitive to details such as user experiences, user interface behaviour, and how smoothly the programs run. Computers are only limited to what it is coded to do, therefore a developer’s attention to detail and patience to code detailed work becomes imperative in the performance of a program or code. Generally, higher-quality code are those that do not cut corners and account for several possible cases. Having a high attention to detail not only allows software developers to identify bugs or mistakes within their own code, but also in other teammate's as well. This will only minimise the roadblocks that the team may face in the future, bolstering efficiency and quality. ~\cite{groove} ~\cite{silicon}
+\\\\
+\noindent \underline{Organisation and Time management} \\
+\noindent As a software developer works to create for a client, there are deadlines and goals that they must reach. Having good organisation and time management allows software developers to approach deadlines at a reasonable pace. It is important to have a good understanding of how much time you and your team needs in order to achieve the next goal in the project. Relaying this information to the employer, client or project manager and giving the reasonable estimates about will be imperative to create a healthy working environment and relationships between both between the employer and employees. ~\cite{pointjupiter} ~\cite{link}
+\\\\
+\noindent \underline{Self-evaluation} \\
+The process of completing a project does not occur overnight, it often takes a sustained period of time where a software developer may learn several new skills or encounter new problems they need to solve. As a software developer garners more experiences it is important to reflect upon these experiences to identify not only the new insights and skills they have gained, but also shortcomings and places for improvement about themselves. Acknowledging these will further booster the software developer’s self - awareness and potential as they head into their next project. Self-evaluation is the bridging step to new breakthroughs and further growth. 
+\\\\
+\subsection{Skills: Cindy Nguyen : Cyber Security}
+
+Cyber security is an in-demand, fast-growing field in need of qualified individuals. This field requires a broad set of technical, professional, and functional skills, as well as a number of hard and soft skills. ~\cite{champion} \\
+
+
+ \noindent 8 key skills in the field: \\
+
+
+ \noindent \underline{Verbal and Written Communication}
+
+ \noindent Graduates in this major will not only be assessed on their technical skills but also soft skills such as communication. Cyber security positions often involve working on a team hence why it is important to be able to effectively and clearly convey your findings, concerns, and solutions to others ~\cite{champion}. Being able to convey technical information to individuals of different levels of technical comprehension and clearly articulating complex concepts is vital (especially when discussing strategy to a client for example) ~\cite{dice}. When talking to clients, the individual is a representative for their company therefore, strong communication skills will be beneficial in creating strong connections with the client/vendor ~\cite{musthaves}. \\
+
+
+ \noindent \underline{Technical Aptitude}
+
+ \noindent As cyber security is a technology-focused field, being acquainted with the required tools is crucial for someone entering cyber security. Possible responsibilities for someone working in this industry could include; troubleshooting, maintaining, and updating information security systems; implementing continuous network monitoring; and providing real-time security solutions - and this cannot be done without understanding how the software works ~\cite{champion}.\\
+
+
+ \noindent \underline{Strong Technical Knowledge Base} \\
+ \noindent Although technical skills are important, they are not the only determining factor of whether an individual is capable in the field. Hands-on technical skills revolve around the experience gained by individuals through actively applying the knowledge they have learnt in practical situations. 
+
+ \noindent Due to the number of subsections to cyber security, the technical skills will vary however, common requirements involve:
+\begin{itemize}
+    \item A functional understanding how operating systems are built and managed
+    \item A firm understanding the fundamentals of computer networking  and cloud computing
+    \item An ability to being able to build and evaluate network architecture, 
+    \item Proficiency in programming languages like Java, Python, and C++
+    \item Familiarity with MySQL database platforms
+    \item Understanding protocols for detecting and preventing firewall breaches
+    \item Firm understanding of basic antivirus principles, VPNs, and firewalls
+\end{itemize}
+        \begin{flushright}
+        ~\cite{national}
+        \end{flushright}
+
+ \noindent The conceptual technical knowledge correlates to the “theory” side of the field so to speak - \textit{“This is the knowledge that helps you do your job but would bore just about anyone you tried to explain it to.”} ~\cite{musthaves}. \\
+
+ \noindent \underline{Problem Solving} 
+
+ \noindent An individual’s attentiveness to detail and problem solving abilities is a key component of what is required in this field - being able to find creative ways to tackle and address complex information security challenges across a variety of existing and emerging technologies and digital environments ~\cite{champion}. \\
+
+ \noindent According to ~\cite{musthaves}, the \textit{“ability to think logically about a cyber security issue, troubleshoot a problem and apply a solution is the basis for your success in cyber security."} Being able to grasp the bigger picture will assist in problem solving. \\
+
+ \noindent \underline{Implementation skills} 
+
+ \noindent Knowing how the systems work or how to solve a problem is not the only important component, being able to implement what has been learnt to their corresponding problems is how an individual will differentiate themselves. By studying the architecture of systems and networks and then using that information to \textit{“identify the security controls in place and how they are used.“} ~\cite{dice}. Being able to know how to work off the company’s current set-up and improve it will prove to be a vital skill for a graduate in cyber security. \\
+
+ \noindent \underline{Research and Commitment to Learning} 
+
+ \noindent Due to the rapid advancements in the IT industry, self-learning and motivation to learn more will allow graduates majoring in cyber security to cope long-term. The ability to be a self starter and work independently will be helpful - employers do not want to constantly be holding their employee’s hands. \\
+
+ \noindent \underline{Adaptability} 
+
+ \noindent Linking back to the fast-paced environment of this field, being able to adapt to new changes will be a favourable skill to have. Being comfortable with working on a variety of operating systems, computer systems, mobile devices, cloud networks, and wireless networks and other platforms will allow for an easy transition in the field. \\
+
+ \noindent \underline{An understanding of hacking} 
+
+ \noindent To be able to solve a problem, we need to understand what the problem itself is. By fully understanding the vulnerabilities of a system and how they can be breached and in turn, using that knowledge to create solutions is a prime factor in this field. \\
+
+
+
+
+
+\subsection{Skills: Lachlan Westfall : Artificial Intelligence}
+As with many areas of computing, the focuses of "Artificial Intelligence" specialists will vary significantly between academia and industry. As such, it feels appropriate to mention the skills required for research alongside industry. 
+\\\\
+\noindent \underline{Extensive Practical Experience}\\
+Many problems in software development have historically been resolved through rapid iteration \cite{iterative_waterfall}. With a good enough initial plan, and methodical trial and error, many issues become approachable. This is very far from the truth in the modern versions of artificial intelligence. In a large scale system, each test can take days or weeks to train and evaluate \cite{gpt3-demystified} so even slight errors can waste significant periods of time. Even tried and tested algorithms can fall apart without sufficiently tuned hyper-parameters \cite{hyperparameters}. For this reason, and many others, extensive practical experience with similar problems is irreplaceable and extremely valuable to any AI related company. 
+\\\\
+\noindent \underline{Teamwork and Collaboration Skills}\\
+Cutting edge machine learning technology is already at far too large of a scale to succeed as an individual, with no sign of slowing down \cite{gpt3-demystified}. Even within academia, researchers focused on the theory will often work with engineers to evaluate new algorithms, hence the different roles within research companies \cite{deepmind_jobs}. As with any creative industry (which research definitely is) it is essential to be able to share the ideation process with others to not only speed it up, but to significantly increase the quality of the output. As more prestigous research teams have higher expectations of your past research \cite{deepmind_research_scientist}, these improvements can have a significant impact on who you will work with in the future.  
+\\\\
+\noindent \underline{Deep Understanding of the Theory}\\
+Due to the complexity of the subject, developers and researchers must have a solid grasp of the existing theory to reason about and plan development of new technologies. Without deeply understanding why things are the way they are, it's impossible to fully appreciate the issues associated with other approaches. As with many areas of computer science, this is not something that can be done and forgotten. There are few fields evolving as fast as artificial intelligence, and to be able to contribute meaningfully you must be on the cutting edge of some subset of the overall research effort. Needless to say, machine learning researchers and engineers need to be constantly reading journals, articles and anything else they can get their hands on. 
+\\\\
+\noindent \underline{Mathematics and Statistics}\\
+Could arguably be considered a part of the theory. However, while many machine learning engineers can thrive without a mathematical background, it is absolutely required for a machine learning researcher to truly understand the inner mathematical workings to be able to develop new unique algorithms. Some of the generally agreed upon requirements are:
+\begin{itemize}
+\item Multivariable calculus
+\item Linear algebra
+\item Probability and statistics
+\item Algorithms
+\item Automata theory
+\end{itemize}
+\cite{mathematics_of_machine_learning}
+But similar to physics in particular, many fields deep under the umbrella of pure mathematics are somewhat ironically being applied to machine learning. A prominent example is topology, which while very abstract, is very closely tied to the geometric aspects of machine learning \cite{topology}. These types of unique extensions are often a way to get your foot in the door as the standard approaches are becoming very saturated and competitive.\\
+\\\\
+\noindent \underline{Ethical Reasoning}\\
+It would almost be negligent to make a list of important machine learning skills without mentioning ethics. While it is not directly practical, ethical considerations should undoubtedly influence the course of development. While we probably aren't 3 years away from SkyNet, practical ethical issues have been observed, many of which have not been resolved \cite{ai_ethics_1} \cite{alignment}. These issues will not go away by themselves, and they definitely can't just be delegated to the ethics researchers as important as that role may be.
+\\\\
+\noindent \underline{Experience with Relevant Tools}
+Just like how web development has its golden trio of languages (HTML, CSS and Javascript), machine learning is generally done in one of a few languages. Competence in at least one of these languages is obviously a requirement for working in academia or industry. The type of language selected is largely affected by which level of the technology you plan to work with. A machine learning researcher is more likely to be working in a high level language like Python or R, while a machine learning engineer is more likely to be using a lower level language like C, C++ or Rust. On top of that, a mathematics or machine learning framework like NumPy, TensorFlow or PyTorch is a must and will do the legwork for all but the least conventional of algorithms.
+\\\\
+\noindent \underline{Abstraction and Planning}\\
+When building a commercial software product, it is common to start with the idea and figure out the details later. As machine learning projects are often defined by the details, this can be very difficult. To move forward in a project, a solid plan is required. An important part of developing a plan is breaking the process into chunks. To do this you really need to see the bigger picture. Machine learning engineers and researchers need well developed abstraction skills to stay productive around the astronomical complexity at the core of these projects. 
+\\\\
+\noindent \underline{Ability to Write Performant, Quality Code}\\
+With the amount of training data and the number of network parameters that are becoming standard for the field, time and memory complexity analysis is extremely important. As with many other parts of AI while this problem is somewhat minimized by the highly optimized python packages (which are mostly written in C/C++), is is still extremely important. Even changes at the highest level can have a huge impact on performance with large enough networks or data. For this purpose, nothing can replace high quality algorithm design. As the codebase grows, solid software engineering principles are also essential. As tempting as it may be to jump straight to the exciting new technology, these fundamentals should receive the time and effort they deserve.
+\\\\
+
+%=======================================================================================
+
+\newpage
+\section{Level 2: Basic Technology}
+
+Level 2 focuses on initial evaluation of the tech stack that is used by a selected company. All companies make use of a range of technologies, and these technologies need to work together. A tech stack is basically just this collection of technologies that collectively enable a company's systems. As an example, one of the most common technology stacks for supporting web servers is LAMP: Linux as the underlying operating system; Apache as a web server; MySQL as the supporting database; and Perl (or more recently PHP or Python) as the programming language.
+
+Each student should choose a different tech stack and explain the role of each of the different technologies in that stack. Note that prior to researching your proposed tech stack and spending time writing about it, it might be a good idea to check with your tutor as to whether your chosen stack is suitable. (Target = $\sim$200-400 words per student).
+
+\subsection{Tech Stack: add student 1 name here}
+
+Your text goes here
+
+\subsection{Tech Stack: add student 2 name here}
+
+Your text goes here
+
+\subsection{Tech Stack: add student 3 name here}
+
+Your text goes here
+
+\subsection{Tech Stack: MEAN Stack - Cindy Nguyen}
+
+\noindent MEAN is a relatively new tech stack used for Javascript web development and is an \textit{“end-to-end JavaScript stack largely used for cloud-ready applications”} ~\cite{IBM}. MEAN is widely used by a number of companies, one of which being “PayPal”.
+
+\begin{itemize}
+    \item MongoDB - document database
+    \item Express(.js) - Node.js web framework
+    \item Angular(.js) - a client-side JavaScript framework
+    \item Node(.js) - the premier JavaScript web server
+
+\end{itemize}
+        \begin{flushright}
+        ~\cite{mongo}
+        \end{flushright}
+
+
+\noindent Role of each component: \\
+
+1. MongoDB \\
+MongoDB uses object-oriented organisation instead of relational models and is an open source, NoSQL database designed for cloud applications. Its compatibility with other technologies in the tech stack enables it to efficiently store the applicant’s data. ~\cite{IBM}.  Since MongoDB is simply put - “a database”, it is commonly used by companies to store product information, client details and various other important information - which is what PayPal has done.
+\\
+
+2. Express(.js) \\
+Express is a web application framework for Node.js and includes a powerful model for URL routing, and handling of HTTP requests and responses. Express handles all the interactions between the frontend and the database, allowing for easy transfer of data. It was designed to be used together with Node.js and hence, JavaScript is used. ~\cite{IBM}
+\\
+
+3. Angular.js \\
+Angular.js - Google’s JavaScript frontend framework. Due to the backend, frontend and database all working using JavaScript, this allows for a smooth transition occurring between all parts of the application. \textit{“Angular.js allows you to extend your HTML tags with metadata in order to create dynamic, interactive web experiences”} ~\cite{IBM}. 
+\\
+
+4. Node.js \\
+Node.js is the backbone of the MEAN stack - it is an open source JavaScript framework. Node.js was not the first techstack choice for Paypal however, it proved \textit{“extremely proficient and we[Paypal] decided to give it a go on production”} (Jeff Harrel, Senior Director of Payments Products and Engineering at PayPal). Nodes.js allowed PayPal to built twice as fast with fewer people working on it, doubled request per second, decreased average response time for the sample page, lowered the required lines for code and file numbers. (AnnaDziuba)
+\\
+
+\noindent How each components intertwine: \\
+\textit{“Express is purpose-built to work on top of Node.js, and AngularJS connects seamlessly to Node.js for fast data serving. Node.js comes complete with an integrated web server, making it easy to deploy your MongoDB database and application to the cloud.”} ~\cite{IBM}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics [width=\textwidth]{Images/MEAN Stack Diagram.png}
+    \caption{This figures shows how each technology interacts with each other ~\cite{mongo}}.
+    \label{fig:mesh1}
+\end{figure}
+\\
+
+
+
+\subsection{Tech Stack: LAMP Stack - Lachlan Westfall}
+
+Among the tech standards that are popular enough to warrant an acronym, LAMP stands out as a tried-and-tested standard. It was originally composed of Linux, Apache, MySQL and PHP, however in the time since its creation other variants have appeared. It stands as a jack of all trades and while not particularly flashy or exciting, it will absolutely get the job done. As it is open source and ever-evolving, it will likely keep this position for many years to come.\\
+"Stable, simple, powerful—these are words most often used to describe LAMP." - IBM  \cite{lamp_ibm}.
+\\\\
+I will now outline each of the technologies in the stack.
+\\\\
+\noindent \underline{Linux}\\
+The linux kernel and its derivative distributions are the glue that hold LAMP together. The other components are running on linux across one or many machines. Linux dominates every computing market outside of home desktops, and web servers are no exception. 
+\\\\
+\noindent \underline{Apache}\\
+Apache is what allows users to connect to the web server. It handles the communication between a user's browser and the other components of the stack \cite{apache}. It was one of the earliest web servers and is still one of the most popular. With something as important as server-client communication, a proven track record is essential, and Apache has that in spades.
+\\\\
+\noindent \underline{MySQL}\\
+MySQL is the database management system (DBMS) for the LAMP stack. It is a traditional relational DBMS, sticking to the theme of "if it works...". The main benefit of MySQL over other RDBMS options is that it is very lightweight, performant and reliable \cite{mysql}. While other DBMS have other features missing from MySQL, if you just need something that works and works well, you can't go wrong with it.
+\\\\
+\noindent \underline{PHP/Perl/Python}\\
+Originally, this slot was only occupied by PHP. LAMP now often utilises the latter two languages and sometimes others like ruby (although it does not start with a P). The role of these languages is to generate the dynamic content expected from modern websites.
+\\\\
+\noindent \underline{How the Technologies Interact}\\
+As stated earlier, these technologies will typically be running across an array of physical or virtual Linux machines. From there, the database MySQL is quite possibly the furthest technology from the user. It stores the various information associated with the website. The scripting language can take this information and user actions to generate the static HTML that the user will see. Apache then takes this static code and serves it to the user. \cite{lamp_ibm}.
+
+%=======================================================================================
+
+\newpage
+\section{Level 3: Advanced Skills}
+
+Level 3 focuses on more advanced technical skills (\LaTeX\ and Git) and analysis of linkages and relationships between the items in the company tech stack.
+
+The following is a list of advanced Git and \LaTeX\ skills/features. Each student should select one pair of items from each list and demonstrate actual use of each item (either through activity in Git, or through including items in this report). (Target = $\sim$100 words per student for each feature).
+\begin{itemize}
+    \item Git
+    \begin{itemize}
+        \item Rebasing and Ignoring files
+        \item Forking and Special files
+        \item Resetting and Tags
+        \item Reverting and Automated merges
+        \item Hooks and Tags
+    \end{itemize}
+    \item \LaTeX\ 
+    \begin{itemize}
+        \item Cross-referencing and Custom commands
+        \item Footnotes/margin notes and creating new environments
+        \item Floating figures and editing style sheets
+        \item Graphics and advanced mathematical equations
+        \item Macros and hyperlinks
+    \end{itemize}
+\end{itemize}
+
+\subsection{Advanced features: add student 1 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\subsection{Advanced features: add student 2 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\subsection{Advanced features: add student 3 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\subsection{Advanced features: add student 4 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+
+
+%=======================================================================================
+
+\newpage
+\section{Level 4: Advanced Knowledge}
+
+Level 4 focuses on analysing your particular tech stack and considering alternatives. Each student should consider the tech stack they described for Level 2, and then discuss each of the following points:
+\begin{itemize}
+    \item What are the strengths and limitations of this stack? (Target = $\sim$200 words).
+    \item What alternatives exist, and under what situations might these alternatives be a better choice? (Target = $\sim$200 words).
+\end{itemize}
+
+\subsection{Advanced Knowledge: add student 1 name here}
+
+Your text goes here
+
+\subsection{Advanced Knowledge: add student 2 name here}
+
+Your text goes here
+
+\subsection{Advanced Knowledge: add student 3 name here}
+
+Your text goes here
+
+\subsection{Advanced Knowledge: add student 4 name here}
+
+Your text goes here
+
+
+
+%=======================================================================================
+
+\newpage
+
+\bibliographystyle{apacite}
+
+\bibliography{references.bib}
+
+\end{document}
+\end{report}
