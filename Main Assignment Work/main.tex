@@ -6,6 +6,9 @@
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
 
 \usepackage[english]{babel}
 \usepackage{apacite}
@@ -548,7 +551,93 @@ Explain your use of the advanced Git and \LaTeX\ features.
 
 Explain your use of the advanced Git and \LaTeX\ features. 
 
-\subsection{Advanced features: add student 4 name here}
+
+
+\subsection{Advanced features: Cindy Nguyen}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\noindent \underline{Git} \\
+
+
+
+
+
+\noindent \underline{Latex} \\
+\textbf{Graphics} \\
+Latex is usually used when writing academic papers and hence, images, figures and/or graphs may be required. Latex enables users to adjust the sizing, positioning, labels and many other features. \\
+
+Firstly, the package needs to be added and a path needs to be initialised for Latex to find the image. 
+
+\begin{center}
+    \begin{verbatim}
+        \usepackage{graphicx}
+        \graphicspath{ {./ <location_of_image> /} }
+    \end{verbatim}
+\end{center}
+
+Afterwards, the image can be inserted through \verb+ \includegraphics[scale=0.25]{name_of_file} +
+
+The result is as follows: \\\\
+\includegraphics [scale=0.25]{Test 1.jpg} \\\\
+
+To add more commands and adjust the image's position can be done through the following:
+
+\begin{verbatim}
+\begin{figure}[h]
+    \centering
+    \includegraphics [scale=0.25]{Images/Test 1.jpg}
+    \caption{Example of captioning}.
+    \label{fig:testing}
+\end{figure}
+\end{verbatim} 
+\\\\
+This will produce: 
+\begin{figure}[h]
+    \centering
+    \includegraphics [scale=0.25]{Images/Test 1.jpg}
+    \caption{Example of captioning}.
+    \label{fig:testing}
+\end{figure}
+\\
+
+\textbf{Advanced Mathematical Equations} \\
+\noindent Latex was made by Donald Kruth as a means of simplifying the process to create high-quality journals, textbooks and papers. Latex is capable of handling complex technical text and advanced mathematical equations which is why it is preferred by authors and publishers worldwide. (ams) \\
+
+Since Latex is “all text” so to speak, mathematical formulas can be written with words. Such as \verb= \(x^2 + y^2\)= which will produce \(x^2 + y^2\). (Overleaf) \\
+
+For complex mathematical equations, packages may be required, such as these below:
+\begin{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\end{verbatim}
+
+\begin{flushright}
+    ~\cite{advanced} 
+\end{flushright}
+
+Example of these packages include:
+\begin{center}
+   \verb= \int_0^1 f(x)g(x)\,dx =  becomes  $\int_0^1 f(x)g(x)\,dx $ \\
+\end{center}  
+  
+ Another example:
+    \begin{verbatim}
+        \[
+        \left\|\frac{x}{y}\right\|
+        + \left.\frac{z}{z+1}\right|_{z=i}
+        \]
+    \end{verbatim}
+    
+    This should turn into:
+    \[
+        \left\|\frac{x}{y}\right\|
+        + \left.\frac{z}{z+1}\right|_{z=i}
+    \]
+\\
+
+
+\subsection{Advanced features: add student 5 name here}
 
 Explain your use of the advanced Git and \LaTeX\ features. 
 
